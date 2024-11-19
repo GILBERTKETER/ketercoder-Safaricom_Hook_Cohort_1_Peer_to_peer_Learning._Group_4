@@ -3,6 +3,7 @@ import Button from "../Button";
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { FaBars, FaTimes } from "react-icons/fa";
+import Link from "next/link";
 
 export default function PortfolioHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -45,7 +46,7 @@ export default function PortfolioHeader() {
             src="/images/logo.png"
             className="rounded-full"
           />
-          <h1 className="text-2xl sm:text-3xl font-extrabold text-white">
+          <h1 className="text-2xl sm:text-3xl font-extrabold text-cyan-500">
             Ketercoder
           </h1>
         </div>
@@ -68,38 +69,53 @@ export default function PortfolioHeader() {
         <div className="w-[auto] lg:flex hidden justify-between gap-10 items-center">
           <div className="sm:flex flex-col sm:flex-row space-y-6 sm:space-y-0 sm:space-x-6 transition-all duration-300 ease-in-out">
             <a
-              href="#about"
+              href="#home"
               className="text-white text-lg hover:text-cyan-500 transition-all"
             >
               Home
             </a>
+
+
             <a
-              href="#projects"
+              href="#services"
               className="text-white text-lg hover:text-cyan-500 transition-all"
             >
               Services
             </a>
             <a
-              href="#contact"
+              href="#skills"
+              className="text-white text-lg hover:text-cyan-500 transition-all"
+            >
+              Skills
+            </a>
+            <a
+              href="#experiences"
               className="text-white text-lg hover:text-cyan-500 transition-all"
             >
               Experience
             </a>
             <a
-              href="#contact"
-              className="text-white text-lg hover:text-cyan-500 transition-all"
-            >
-              Testimonial
-            </a>
-            <a
-              href="#contact"
+              href="#projects"
               className="text-white text-lg hover:text-cyan-500 transition-all"
             >
               Projects
             </a>
+            <a
+              href="#certifications"
+              className="text-white text-lg hover:text-cyan-500 transition-all"
+            >
+              Certifications
+            </a> <a
+              href="#testimonials"
+              className="text-white text-lg hover:text-cyan-500 transition-all"
+            >
+              Testimonials
+            </a>
           </div>
           <div>
-            <Button onClick={handleClick}>Contact me</Button>
+            <Link href="/#contact">
+              <Button>Contact me</Button>
+            </Link>
           </div>
         </div>
       </div>
@@ -107,9 +123,8 @@ export default function PortfolioHeader() {
       {/* Mobile Menu (grid layout) */}
       <div
         ref={menuRef}
-        className={`lg:hidden absolute top-20 left-0 right-0 bg-black p-6 transition-all duration-500 linear ${
-          isMenuOpen ? "grid grid-cols-2 gap-3" : "hidden"
-        }`}
+        className={`lg:hidden absolute top-20 left-0 right-0 bg-black p-6 transition-all duration-500 linear ${isMenuOpen ? "grid grid-cols-2 gap-3" : "hidden"
+          }`}
       >
         <a
           href="#about"
@@ -124,24 +139,39 @@ export default function PortfolioHeader() {
           Services
         </a>
         <a
-          href="#contact"
+          href="#skills"
+          className="text-lg text-cyan-500 hover:text-cyan-700 transition-all"
+        >
+          Skills
+        </a>
+        <a
+          href="#experiences"
           className="text-lg text-cyan-500 hover:text-cyan-700 transition-all"
         >
           Experience
         </a>
         <a
-          href="#contact"
-          className="text-lg text-cyan-500 hover:text-cyan-700 transition-all"
-        >
-          Testimonial
-        </a>
-        <a
-          href="#contact"
+          href="#projects"
           className="text-lg text-cyan-500 hover:text-cyan-700 transition-all"
         >
           Projects
         </a>
-        <Button onClick={handleClick}>Contact me</Button>
+        <a
+          href="#certifications"
+          className="text-lg text-cyan-500 hover:text-cyan-700 transition-all"
+        >
+          Certifications
+        </a>
+        <a
+          href="#testimonials"
+          className="text-lg text-cyan-500 hover:text-cyan-700 transition-all"
+        >
+          Testimonials
+        </a>
+        <Link href="/#contact">
+
+          <Button>Contact me</Button>
+        </Link>
       </div>
     </header>
   );

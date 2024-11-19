@@ -1,16 +1,18 @@
 "use client"
 import React from 'react';
 import { motion } from 'framer-motion';
-import { 
-  FaCode, 
-  FaMobileAlt, 
-  FaServer, 
+import ExperienceMetrics from '../ExperienceMetrics';
+import GradientSection from '../Gradient';
+import {
+  FaCode,
+  FaMobileAlt,
+  FaServer,
   FaDatabase,
   FaCertificate,
 } from 'react-icons/fa';
-import { 
-  SiTypescript, 
-  SiReact, 
+import {
+  SiTypescript,
+  SiReact,
   SiDocker,
   SiKubernetes,
   SiNextdotjs,
@@ -115,36 +117,42 @@ const certifications: Certification[] = [
 // Components
 const ServiceCard: React.FC<{ service: Service }> = ({ service }) => {
   const { icon: Icon, title, description, technologies } = service;
-  
+
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
-      className="bg-transparent border-2 border-cyan-500 rounded-xl p-6 hover:shadow-lg hover:shadow-cyan-500/20 transition-all duration-300"
-    >
-      <div className="w-12 h-12 bg-cyan-500/10 rounded-lg flex items-center justify-center mb-4">
-        <Icon className="text-cyan-500 text-2xl" />
-      </div>
-      <h3 className="text-white text-xl font-bold mb-3">{title}</h3>
-      <p className="text-gray-300 mb-4">{description}</p>
-      <div className="flex flex-wrap gap-2">
-        {technologies.map((tech, index) => (
-          <span
-            key={index}
-            className="text-sm text-cyan-500 bg-cyan-500/10 px-3 py-1 rounded-full"
-          >
-            {tech}
-          </span>
-        ))}
-      </div>
-    </motion.div>
+    <GradientSection>
+
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        className="bg-transparent rounded-xl hover:shadow-lg hover:shadow-cyan-500/20 transition-all duration-300"
+      >
+        <div className="w-12 h-12 bg-cyan-500/10 rounded-lg flex items-center justify-center mb-4">
+          <Icon className="text-cyan-500 text-2xl" />
+        </div>
+        <h3 className="text-white text-xl font-bold mb-3">{title}</h3>
+        <p className="text-gray-300 mb-4">{description}</p>
+        <div className="flex flex-wrap gap-2">
+          {technologies.map((tech, index) => (
+            <span
+              key={index}
+              className="text-sm text-cyan-500 bg-cyan-500/10 px-3 py-1 rounded-full"
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
+      </motion.div>
+    </GradientSection>
+
   );
 };
 
 const ExperienceCard: React.FC<{ experience: Experience }> = ({ experience }) => {
   return (
+    <GradientSection className='mb-10'>
+
     <motion.div
       initial={{ opacity: 0, x: -20 }}
       whileInView={{ opacity: 1, x: 0 }}
@@ -153,7 +161,7 @@ const ExperienceCard: React.FC<{ experience: Experience }> = ({ experience }) =>
       className="relative pl-8 pb-12 border-l-2 border-cyan-500 last:pb-0"
     >
       <div className="absolute -left-[9px] top-0 w-4 h-4 bg-cyan-500 rounded-full" />
-      <div className="bg-transparent rounded-xl p-6 border-2 border-cyan-500">
+      <div className="bg-transparent rounded-xl">
         <div className="flex justify-between items-start mb-4">
           <div>
             <h3 className="text-white text-xl font-bold">{experience.role}</h3>
@@ -181,17 +189,20 @@ const ExperienceCard: React.FC<{ experience: Experience }> = ({ experience }) =>
         </div>
       </div>
     </motion.div>
+    </GradientSection>
   );
 };
 
 const CertificationCard: React.FC<{ certification: Certification }> = ({ certification }) => {
   return (
+    <GradientSection>
+
     <motion.div
       initial={{ opacity: 0, scale: 0.95 }}
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
-      className="bg-transparent border-2 border-cyan-500 rounded-xl p-6 hover:shadow-lg hover:shadow-cyan-500/20 transition-all duration-300"
+      className="bg-transparent rounded-xl hover:shadow-lg hover:shadow-cyan-500/20 transition-all duration-300"
     >
       <div className="flex items-start justify-between">
         <div>
@@ -205,13 +216,14 @@ const CertificationCard: React.FC<{ certification: Certification }> = ({ certifi
         <p className="text-sm text-gray-400">Credential ID: {certification.credential}</p>
       </div>
     </motion.div>
+    </GradientSection>
   );
 };
 
 // Sections
 export const ServicesSection: React.FC = () => {
   return (
-    <section className="py-20 px-4 max-w-7xl mx-auto">
+    <section id='services' className="py-20 px-4 max-w-7xl mx-auto">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -219,6 +231,8 @@ export const ServicesSection: React.FC = () => {
         className="text-center mb-16"
       >
         <h2 className="text-4xl font-bold text-white mb-4">Services</h2>
+        <div className="w-20 h-1 bg-cyan-500 mx-auto rounded-full"/>
+
         <p className="text-gray-300 max-w-2xl mx-auto">
           Specialized in delivering high-quality solutions across various domains of software development.
         </p>
@@ -234,7 +248,7 @@ export const ServicesSection: React.FC = () => {
 
 export const ExperienceSection: React.FC = () => {
   return (
-    <section className="py-20 px-4 max-w-7xl mx-auto">
+    <section id="experiences" className="py-20 px-4 max-w-7xl mx-auto">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -242,22 +256,25 @@ export const ExperienceSection: React.FC = () => {
         className="text-center mb-16"
       >
         <h2 className="text-4xl font-bold text-white mb-4">Experience</h2>
+        <div className="w-20 h-1 bg-cyan-500 mx-auto rounded-full"/>
+
         <p className="text-gray-300 max-w-2xl mx-auto">
           A track record of delivering impactful solutions at industry-leading companies.
         </p>
       </motion.div>
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-4xl mx-auto ">
         {experiences.map((experience, index) => (
           <ExperienceCard key={index} experience={experience} />
         ))}
       </div>
+      <ExperienceMetrics />
     </section>
   );
 };
 
 export const CertificationsSection: React.FC = () => {
   return (
-    <section className="py-20 px-4 max-w-7xl mx-auto">
+    <section id="certifications" className="py-20 px-4 max-w-7xl mx-auto">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -265,6 +282,8 @@ export const CertificationsSection: React.FC = () => {
         className="text-center mb-16"
       >
         <h2 className="text-4xl font-bold text-white mb-4">Certifications</h2>
+        <div className="w-20 h-1 bg-cyan-500 mx-auto rounded-full"/>
+
         <p className="text-gray-300 max-w-2xl mx-auto">
           Professional certifications and achievements in various technologies.
         </p>
@@ -289,7 +308,8 @@ const SkillsSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 px-4 max-w-7xl mx-auto">
+
+    <section id='skills' className="py-20 max-w-7xl mx-auto">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -297,10 +317,14 @@ const SkillsSection: React.FC = () => {
         className="text-center mb-16"
       >
         <h2 className="text-4xl font-bold text-white mb-4">Skills & Technologies</h2>
+        <div className="w-20 h-1 bg-cyan-500 mx-auto rounded-full"/>
+
         <p className="text-gray-300 max-w-2xl mx-auto">
           Proficient in modern technologies and frameworks used in production environments.
         </p>
       </motion.div>
+      <GradientSection className='lg:mx-0 mx-5'>
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {skills.map((skill, index) => (
           <motion.div
@@ -309,7 +333,7 @@ const SkillsSection: React.FC = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="bg-transparent border-2 border-cyan-500 rounded-xl p-6"
+            className="bg-transparent rounded-xl"
           >
             <div className="flex items-center mb-4">
               <skill.icon className="text-cyan-500 text-2xl mr-3" />
@@ -335,9 +359,13 @@ const SkillsSection: React.FC = () => {
               </div>
             </div>
           </motion.div>
-        ))}
+
+))}
       </div>
+      </GradientSection>
+
     </section>
+
   );
 };
 

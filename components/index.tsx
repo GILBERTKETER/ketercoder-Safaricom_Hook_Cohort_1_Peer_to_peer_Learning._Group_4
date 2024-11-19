@@ -4,12 +4,14 @@ import Footer from "./Footer";
 import GlowingMovingLines from "./Lines/lines"
 import SocialLinks from "./links";
 import Contact from "./Contact";
-import Card from "./card";
+import Projects from "./Projects";
+import ScrollToTopButton from "./ScrollToTop/ScrollToTopButton";
 import {
   ServicesSection,
   ExperienceSection,
   CertificationsSection,
   SkillsSection
 } from './About';
+import TestimonialsCarousel from "./Testimonials";
 
-export { Hero, PortfolioHeader, Footer, GlowingMovingLines, SocialLinks, Contact, Card, ServicesSection, ExperienceSection, CertificationsSection, SkillsSection };
+export { Hero, PortfolioHeader, Footer, GlowingMovingLines, SocialLinks, Contact, Projects, ServicesSection, ExperienceSection, CertificationsSection, SkillsSection, TestimonialsCarousel, ScrollToTopButton};

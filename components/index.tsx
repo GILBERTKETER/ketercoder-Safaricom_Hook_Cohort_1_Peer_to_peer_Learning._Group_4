@@ -14,4 +14,4 @@ import {
 } from './About';
 import TestimonialsCarousel from "./Testimonials";
 
-export { Hero, PortfolioHeader, Footer, GlowingMovingLines, SocialLinks, Contact, Projects, ServicesSection, ExperienceSection, CertificationsSection, SkillsSection, TestimonialsCarousel, ScrollToTopButton};
+export { Hero, PortfolioHeader, Footer, GlowingMovingLines, SocialLinks, Contact, Projects, ServicesSection, ExperienceSection, CertificationsSection, SkillsSection, TestimonialsCarousel, ScrollToTopButton };

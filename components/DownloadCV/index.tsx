@@ -27,7 +27,7 @@ const CVDownload = () => {
                 </div>
             </a>
         </motion.div>
-     );
+    );
 };
 
 export default CVDownload;

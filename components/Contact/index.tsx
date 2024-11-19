@@ -20,11 +20,11 @@ const Contact = () => {
       transition={{ duration: 0.8 }}
       className="relative mx-auto md:px-8 2xl:px-0">
       <div id="contact" className="relative px-4 mx-auto md:px-8 2xl:px-0">
-
+        
         <div className="relative mx-auto max-w-c-1390 px-7.5 pt-10 lg:px-15 lg:pt-15 xl:px-20">
           <div className="flex flex-col flex-wrap gap-8 md:flex-row md:flex-nowrap md:justify-between xl:gap-20">
             <div className="relative mx-auto w-full md:w-3/5 lg:w-3/4">
-              <GradientSection>
+     <GradientSection>
                 <section className="bg-transparent">
                   <div className="py-8 lg:py-16 lg:px-4 mx-auto max-w-screen-md">
                     <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-center text-white">
@@ -37,7 +37,7 @@ const Contact = () => {
                       Need assistance with coding, projects, or IT-related tasks? Feel free to reach out to me!
                     </p>
 
-                    <form action="https://formbold.com/s/3dG2E" method="POST" className="space-y-8 px-2 bg-transparent">
+                    <form action="https://formbold.com/s/3dG2E" method="POST" className="space-y-8 bg-transparent">
                       <div>
                         <label htmlFor="email" className="block mb-2 text-sm font-medium text-white">
                           Your email

@@ -6,7 +6,7 @@ function Footer() {
     return (
 
 
-        <footer className="bg-black">
+        <footer className="bg-transparent">
             <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
                 <div className="md:flex md:justify-between">
                     <div className="flex lg:flex-row flex-col justify-between gap-2 lg:items-center w-full lg:w-1/2 mb-6 md:mb-0">

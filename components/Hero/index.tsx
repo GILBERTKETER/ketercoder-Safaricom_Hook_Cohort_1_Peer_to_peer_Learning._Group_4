@@ -1,8 +1,10 @@
 import Image from "next/image";
+import React from "react";
+import './Hero.css'; 
 
 export default function Hero() {
   return (
-    <section className="mt-20 w-full h-screen flex flex-col lg:flex-row justify-center items-center bg-transparent border-cyan-500">
+    <section className=" w-full h-screen flex flex-col lg:flex-row justify-center items-center bg-transparent">
       <div className="lg:text-right text-center px-4 py-6 max-w-4xl w-full lg:w-1/2">
         <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold text-white mb-4">
           Gilbert Keter
@@ -19,8 +21,8 @@ export default function Hero() {
           </a>
         </div>
       </div>
-      <div className="lg:w-1/2 w-full h-[100vh] flex justify-center items-start lg:items-center">
-        <div className="relative w-100 h-100 rounded-full overflow-hidden border-4 border-cyan-500 shadow-lg">
+      <div className="lg:w-1/2 w-full h-[auto] flex justify-center items-start lg:items-center">
+        <div className="relative w-100 h-100 rounded-full overflow-hidden sparkling-border shadow-lg">
           <Image
             width={500}
             height={500}

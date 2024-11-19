@@ -9,115 +9,130 @@ interface Point {
 }
 
 interface GlowingBranchingLinesProps {
-  children?: React.ReactNode; // Accepts any nested components or elements
+  children?: React.ReactNode;
 }
 
 const GlowingBranchingLines: React.FC<GlowingBranchingLinesProps> = ({ children }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const pointsRef = useRef<Point[]>([]);
-  const [pointCount, setPointCount] = useState<number>(300); // Default to 300 points for desktop
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [pointCount, setPointCount] = useState<number>(300);
   const LINE_LENGTH = 150;
 
-  // Adjust point count based on screen width
+  // Update point count based on screen size
   const updatePointCount = () => {
-    const isMobile = window.innerWidth <= 768; // Assuming 768px as mobile breakpoint
-    setPointCount(isMobile ? 75 : 300); // Reduce points by 4 on mobile
+    const isMobile = window.innerWidth <= 768;
+    setPointCount(isMobile ? 75 : 300);
   };
 
-  // Initialize points only once or when point count changes
   useEffect(() => {
-    updatePointCount(); // Set initial point count based on screen size
-    window.addEventListener('resize', updatePointCount); // Update point count on resize
-
+    updatePointCount();
+    window.addEventListener("resize", updatePointCount);
     return () => {
-      window.removeEventListener('resize', updatePointCount); // Clean up on unmount
+      window.removeEventListener("resize", updatePointCount);
     };
   }, []);
 
-  useEffect(() => {
+  const initializePoints = (width: number, height: number) => {
     const initialPoints: Point[] = [];
     for (let i = 0; i < pointCount; i++) {
-      const angle = Math.random() * 2 * Math.PI; // Random initial direction
-      const speed = 3; // Constant speed, twice the previous value
+      const angle = Math.random() * 2 * Math.PI;
+      const speed = 3;
       initialPoints.push({
-        x: Math.random() * window.innerWidth,
-        y: Math.random() * window.innerHeight,
-        vx: Math.cos(angle) * speed, // Set constant horizontal velocity
-        vy: Math.sin(angle) * speed, // Set constant vertical velocity
+        x: Math.random() * width,
+        y: Math.random() * height,
+        vx: Math.cos(angle) * speed,
+        vy: Math.sin(angle) * speed,
       });
     }
     pointsRef.current = initialPoints;
-  }, [pointCount]);
-
-  // Function to draw glowing lines and nodes
-  const draw = (ctx: CanvasRenderingContext2D) => {
-    ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
-
-    pointsRef.current.forEach((point, index) => {
-      for (let i = index + 1; i < pointsRef.current.length; i++) {
-        const other = pointsRef.current[i];
-        const distance = Math.hypot(other.x - point.x, other.y - point.y);
-
-        if (distance < LINE_LENGTH) {
-          const glowIntensity = 1 - distance / LINE_LENGTH;
-
-          ctx.strokeStyle = `rgba(0, 255, 255, ${glowIntensity})`;
-          ctx.lineWidth = 1.5;
-          ctx.beginPath();
-          ctx.moveTo(point.x, point.y);
-          ctx.lineTo(other.x, other.y);
-          ctx.stroke();
-        }
-      }
-
-      ctx.fillStyle = 'rgba(0, 255, 255, 1)';
-      ctx.beginPath();
-      ctx.arc(point.x, point.y, 2.5, 0, Math.PI * 2);
-      ctx.fill();
-    });
   };
 
-  // Update point positions for constant movement
-  const updatePoints = () => {
-    pointsRef.current = pointsRef.current.map(point => {
-      let { x, y, vx, vy } = point;
-
-      // Move points at a constant speed in their current direction
-      x += vx;
-      y += vy;
-
-      // Wrap points around the canvas
-      if (x < 0) x = window.innerWidth;
-      if (x > window.innerWidth) x = 0;
-      if (y < 0) y = window.innerHeight;
-      if (y > window.innerHeight) y = 0;
-
-      return { x, y, vx, vy };
-    });
-  };
-
-  // Set up animation
   useEffect(() => {
     const canvas = canvasRef.current;
     const ctx = canvas?.getContext("2d");
+
     if (!canvas || !ctx) return;
 
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    // Resize canvas and initialize points based on container size
+    const resizeCanvas = () => {
+      if (containerRef.current) {
+        // Get the actual content height including all children
+        const contentHeight = Math.max(
+          containerRef.current.scrollHeight,
+          window.innerHeight
+        );
+        canvas.width = containerRef.current.offsetWidth;
+        canvas.height = contentHeight;
+        initializePoints(canvas.width, contentHeight);
+      }
+    };
+
+    resizeCanvas();
+    window.addEventListener("resize", resizeCanvas);
+
+    const draw = (ctx: CanvasRenderingContext2D) => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      pointsRef.current.forEach((point, index) => {
+        for (let i = index + 1; i < pointsRef.current.length; i++) {
+          const other = pointsRef.current[i];
+          const distance = Math.hypot(other.x - point.x, other.y - point.y);
+
+          if (distance < LINE_LENGTH) {
+            const glowIntensity = 1 - distance / LINE_LENGTH;
+            ctx.strokeStyle = `rgba(0, 255, 255, ${glowIntensity})`;
+            ctx.lineWidth = 1.5;
+            ctx.beginPath();
+            ctx.moveTo(point.x, point.y);
+            ctx.lineTo(other.x, other.y);
+            ctx.stroke();
+          }
+        }
+
+        ctx.fillStyle = 'rgba(0, 255, 255, 1)';
+        ctx.beginPath();
+        ctx.arc(point.x, point.y, 2.5, 0, Math.PI * 2);
+        ctx.fill();
+      });
+    };
+
+    const updatePoints = () => {
+      const width = canvas.width;
+      const height = canvas.height;
+
+      pointsRef.current = pointsRef.current.map(point => {
+        let { x, y, vx, vy } = point;
+        x += vx;
+        y += vy;
+
+        // Wrap points around if they go outside the canvas bounds
+        if (x < 0) x = width;
+        if (x > width) x = 0;
+        if (y < 0) y = height;
+        if (y > height) y = 0;
+
+        return { x, y, vx, vy };
+      });
+    };
 
     const animate = () => {
-      updatePoints(); // Update positions smoothly
-      draw(ctx); // Draw points and glowing lines
-      requestAnimationFrame(animate); // Continuously animate for smoothness
+      updatePoints();
+      draw(ctx);
+      requestAnimationFrame(animate);
     };
 
     animate();
-  }, []);
+
+    return () => {
+      window.removeEventListener("resize", resizeCanvas);
+    };
+  }, [pointCount]);
 
   return (
-    <div className="relative w-full h-full">
-      <canvas ref={canvasRef} className="absolute inset-0 bg-black z-0" />
-      <div className="relative z-10">
+    <div ref={containerRef} className="relative w-full min-h-screen flex flex-col">
+      <canvas ref={canvasRef} className="fixed inset-0 bg-black" />
+      <div className="relative z-10 flex-grow">
         {children}
       </div>
     </div>

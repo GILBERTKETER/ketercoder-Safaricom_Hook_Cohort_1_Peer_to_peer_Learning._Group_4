@@ -1,5 +1,4 @@
-import GlowingMovingLines from "@/components/Lines/lines";
-import { Hero, PortfolioHeader, Footer } from "@/components/index"
+import { Hero, PortfolioHeader, Footer, GlowingMovingLines, SocialLinks, Contact, Card, ServicesSection, ExperienceSection, CertificationsSection, SkillsSection } from "@/components/index"
 export default function Home() {
   return (
 
@@ -7,6 +6,13 @@ export default function Home() {
       <GlowingMovingLines>
         <PortfolioHeader />
         <Hero />
+        <SocialLinks/>
+        <Card/>
+        <ServicesSection />
+      <ExperienceSection />
+      <SkillsSection />
+      <CertificationsSection />
+        <Contact/>
         <Footer/>
       </GlowingMovingLines>
 

@@ -4,6 +4,7 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import { FaQuoteRight } from "react-icons/fa";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import GradientSection from '../Gradient';
 // Define types
 interface Testimonial {
     id: number;
@@ -81,8 +82,8 @@ const TestimonialsCarousel = () => {
     return (
         <div id='testimonials' className="relative w-full max-w-6xl mx-auto px-4 py-16">
             {/* Background gradient effects */}
-            <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-transparent to-cyan-500/10" />
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/40 to-transparent" />
+            {/* <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-transparent to-cyan-500/10" />
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/40 to-transparent" /> */}
 
             {/* Main content container */}
             <div className="relative">
@@ -112,7 +113,8 @@ const TestimonialsCarousel = () => {
                                     </div>
 
                                     {/* Testimonial card */}
-                                    <div className="backdrop-blur-lg bg-white/5 border border-cyan-500/20 rounded-2xl p-8 shadow-xl hover:shadow-cyan-500/5 transition-all duration-300">
+                                    <GradientSection>
+
                                         <div className="flex items-center mb-6">
                                             {/* Profile image with gradient border */}
                                             <div className="relative h-20 w-20 flex items-center justify-center">
@@ -161,7 +163,8 @@ const TestimonialsCarousel = () => {
                                                 </svg>
                                             ))}
                                         </div>
-                                    </div>
+                                    </GradientSection>
+
                                 </div>
                             </div>
                         ))}

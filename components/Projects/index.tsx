@@ -76,7 +76,7 @@ const sampleProjects: Project[] = [
 const PortfolioCard: React.FC<{ project: Project }> = ({ project }) => {
   return (
     <GradientSection>
-      <div  className="relative bg-transparent rounded-xl overflow-hidden shadow-lg hover:shadow-cyan-500/20 transition-all duration-300">
+      <div  className="relative bg-transparent rounded-xl overflow-hidden shadow-lg h-full transition-all duration-300">
         <div className="">
           <div className="flex items-center justify-between mb-4">
             <h3 className="text-white text-2xl font-bold">{project.name}</h3>

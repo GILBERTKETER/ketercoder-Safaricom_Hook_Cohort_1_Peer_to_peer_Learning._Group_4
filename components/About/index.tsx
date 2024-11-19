@@ -122,14 +122,14 @@ const ServiceCard: React.FC<{ service: Service }> = ({ service }) => {
   const { icon: Icon, title, description, technologies } = service;
 
   return (
-    <GradientSection>
+    <GradientSection className='h-full'>
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="bg-transparent rounded-xl hover:shadow-lg hover:shadow-cyan-500/20 transition-all duration-300"
+        className="bg-transparent h-full rounded-xl transition-all duration-300"
       >
         <div className="w-12 h-12 bg-cyan-500/10 rounded-lg flex items-center justify-center mb-4">
           <Icon className="text-cyan-500 text-2xl" />
@@ -205,7 +205,7 @@ const CertificationCard: React.FC<{ certification: Certification }> = ({ certifi
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
-      className="bg-transparent rounded-xl hover:shadow-lg hover:shadow-cyan-500/20 transition-all duration-300"
+      className="bg-transparent rounded-xl transition-all duration-300"
     >
       <div className="flex items-start justify-between">
         <div>
@@ -240,7 +240,7 @@ export const ServicesSection: React.FC = () => {
           Specialized in delivering high-quality solutions across various domains of software development.
         </p>
       </motion.div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 h-full">
         {services.map((service, index) => (
           <ServiceCard key={index} service={service} />
         ))}
@@ -251,7 +251,7 @@ export const ServicesSection: React.FC = () => {
 
 export const ExperienceSection: React.FC = () => {
   return (
-    <section id="experiences" className="py-20 px-4 max-w-7xl mx-auto">
+    <section id="experiences" className=" px-4 max-w-7xl mx-auto">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}

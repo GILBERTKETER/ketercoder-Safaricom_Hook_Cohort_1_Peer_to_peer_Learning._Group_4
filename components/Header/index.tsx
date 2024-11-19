@@ -127,7 +127,7 @@ export default function PortfolioHeader() {
           }`}
       >
         <a
-          href="#about"
+          href="#home"
           className="text-lg text-cyan-500 hover:text-cyan-700 transition-all"
         >
           Home

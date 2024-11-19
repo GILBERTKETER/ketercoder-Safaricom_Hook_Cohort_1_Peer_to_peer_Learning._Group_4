@@ -1,4 +1,5 @@
 "use client"
+import Image from 'next/image';
 import React from 'react';
 import { useEffect, useState } from 'react';
 import { FaQuoteRight } from "react-icons/fa";
@@ -22,7 +23,7 @@ const testimonials: Testimonial[] = [
         company: "TechStart Solutions",
         content: "The level of expertise and attention to detail demonstrated by this team is truly exceptional. They didn't just meet our expectations – they redefined them.",
         rating: 5,
-        imageUrl: "/api/placeholder/80/80"
+        imageUrl: "/images/client1.avif"
     },
     {
         id: 2,
@@ -31,7 +32,7 @@ const testimonials: Testimonial[] = [
         company: "Future Dynamics",
         content: "Their innovative approach to problem-solving and commitment to excellence has made them an invaluable partner in our digital transformation journey.",
         rating: 5,
-        imageUrl: "/api/placeholder/80/80"
+        imageUrl: "/images/client3.jpeg"
     },
     {
         id: 3,
@@ -40,7 +41,7 @@ const testimonials: Testimonial[] = [
         company: "Innovate Hub",
         content: "Working with this team has been transformative. Their technical prowess combined with strategic thinking has delivered exceptional results.",
         rating: 5,
-        imageUrl: "/api/placeholder/80/80"
+        imageUrl: "/images/client2.avif"
     }
 ];
 
@@ -89,8 +90,8 @@ const TestimonialsCarousel = () => {
                     <h2 className="text-4xl font-bold text-white mb-4 tracking-tight">
                         Client Testimonials
                     </h2>
-                    <div className="w-20 h-1 bg-cyan-500 mx-auto rounded-full"/>
-                    </div>
+                    <div className="w-20 h-1 bg-cyan-500 mx-auto rounded-full" />
+                </div>
 
                 {/* Testimonial carousel */}
                 <div className="relative overflow-hidden">
@@ -98,7 +99,7 @@ const TestimonialsCarousel = () => {
                         className="transition-transform duration-500 ease-out flex"
                         style={{ transform: `translateX(-${currentSlide * 100}%)` }}
                     >
-                        {testimonials.map((testimonial, index) => (
+                        {testimonials.map((testimonial) => (
                             <div
                                 key={testimonial.id}
                                 className="w-full flex-shrink-0 px-4"
@@ -114,13 +115,15 @@ const TestimonialsCarousel = () => {
                                     <div className="backdrop-blur-lg bg-white/5 border border-cyan-500/20 rounded-2xl p-8 shadow-xl hover:shadow-cyan-500/5 transition-all duration-300">
                                         <div className="flex items-center mb-6">
                                             {/* Profile image with gradient border */}
-                                            <div className="relative">
-                                                <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full p-[2px]">
-                                                    <div className="w-20 h-20 rounded-full overflow-hidden">
-                                                        <img
+                                            <div className="relative h-20 w-20 flex items-center justify-center">
+                                                <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full p-[2px] flex items-center justify-center">
+                                                    <div className="w-full h-full rounded-full overflow-hidden flex items-center justify-center">
+                                                        <Image
+                                                            width={80}
+                                                            height={80}
                                                             src={testimonial.imageUrl}
                                                             alt={testimonial.name}
-                                                            className="w-full h-full object-cover"
+                                                            className="w-full h-full object-cover rounded-full"
                                                         />
                                                     </div>
                                                 </div>
@@ -168,13 +171,13 @@ const TestimonialsCarousel = () => {
                     <button
                         onClick={prevSlide}
                         className="absolute left-0 bottom-1/2 -translate-y-1/2 -translate-x-0 w-6 h-6 rounded-full bg-white/10 border border-cyan-500/20 backdrop-blur-lg flex items-center justify-center text-white hover:bg-white/20 transition-all"
-                    >
+                    >{" "}
                         <IoIosArrowBack className="w-6 h-6" />
                     </button>
                     <button
                         onClick={nextSlide}
                         className="absolute right-0 bottom-1/2 -translate-y-1/2 translate-x-0 w-6 h-6 rounded-full bg-white/10 border border-cyan-500/20 backdrop-blur-lg flex items-center justify-center text-white hover:bg-white/20 transition-all"
-                    >
+                    >{" "}
                         <IoIosArrowForward className="w-6 h-6" />
 
                     </button>
@@ -183,6 +186,8 @@ const TestimonialsCarousel = () => {
                     <div className="flex justify-center gap-3 mt-8">
                         {testimonials.map((_, index) => (
                             <button
+                                title='Current'
+                                type='button'
                                 key={index}
                                 onClick={() => goToSlide(index)}
                                 className={`w-3 h-3 rounded-full transition-all duration-300 ${currentSlide === index

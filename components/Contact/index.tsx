@@ -41,7 +41,7 @@ const Contact = () => {
                       Need assistance with coding, projects, or IT-related tasks? Feel free to reach out to me!
                     </p>
                     
-                    <form action="#" className="space-y-8 bg-transparent">
+                    <form action="https://formbold.com/s/3dG2E" method="POST" className="space-y-8 bg-transparent">
                       <div>
                         <label htmlFor="email" className="block mb-2 text-sm font-medium text-white">
                           Your email
@@ -81,7 +81,7 @@ const Contact = () => {
                       </div>
                       
                       <Button 
-                        onClick={() => {console.log("sending message")}}
+                      
                         className="hover:shadow-cyan-500/20 transition-all duration-300"
                       >
                         Send message

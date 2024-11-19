@@ -2,10 +2,15 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FaCode, FaBuilding, FaClock } from 'react-icons/fa';
 
+import { IconType } from 'react-icons';
+interface IconWithClassName extends IconType {
+  className?: string;
+}
+
 interface ExperienceMetric {
   value: number;
   label: string;
-  icon: React.ComponentType;
+  icon: IconWithClassName;
 }
 
 const ExperienceMetrics: React.FC = () => {
@@ -13,17 +18,17 @@ const ExperienceMetrics: React.FC = () => {
     {
       value: 8,
       label: 'Years Experience',
-      icon: FaClock
+      icon: FaClock as IconWithClassName
     },
     {
       value: 12,
       label: 'Companies',
-      icon: FaBuilding
+      icon: FaBuilding as IconWithClassName
     },
     {
       value: 45,
       label: 'Projects',
-      icon: FaCode
+      icon: FaCode as IconWithClassName
     }
   ];
 

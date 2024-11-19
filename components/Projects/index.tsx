@@ -1,5 +1,10 @@
 import React from 'react';
 import GradientSection from '../Gradient';
+import { IconType } from 'react-icons';
+
+interface IconWithClassName extends IconType{
+  className?:string;
+}
 import {
   FaGithub,
   FaExternalLinkAlt,
@@ -16,7 +21,7 @@ import {
 
 interface Technology {
   name: string;
-  icon: React.ComponentType;
+  icon: IconWithClassName;
 }
 
 interface Project {

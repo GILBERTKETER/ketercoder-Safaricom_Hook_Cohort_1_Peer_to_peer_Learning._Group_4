@@ -3,6 +3,10 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import ExperienceMetrics from '../ExperienceMetrics';
 import GradientSection from '../Gradient';
+import { IconType } from 'react-icons';
+interface IconWithClassName extends IconType{
+  className?:string;
+}
 import {
   FaCode,
   FaMobileAlt,
@@ -16,13 +20,12 @@ import {
   SiDocker,
   SiKubernetes,
   SiNextdotjs,
-  SiGithub,
   SiAwsamplify
 } from 'react-icons/si';
 
 // Interfaces
 interface Service {
-  icon: React.ComponentType;
+  icon: IconWithClassName;
   title: string;
   description: string;
   technologies: string[];
@@ -47,25 +50,25 @@ interface Certification {
 // Sample Data
 const services: Service[] = [
   {
-    icon: FaCode,
+    icon: FaCode as IconWithClassName,
     title: 'Frontend Development',
     description: 'Building responsive and interactive web applications with modern frameworks and best practices.',
     technologies: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS']
   },
   {
-    icon: FaServer,
+    icon: FaServer as IconWithClassName,
     title: 'Backend Development',
     description: 'Developing robust server-side applications and RESTful APIs.',
     technologies: ['Node.js', 'Express', 'PostgreSQL', 'AWS']
   },
   {
-    icon: FaMobileAlt,
+    icon: FaMobileAlt as IconWithClassName,
     title: 'Mobile Development',
     description: 'Creating cross-platform mobile applications with native performance.',
     technologies: ['React Native', 'Expo', 'Firebase', 'Redux']
   },
   {
-    icon: FaDatabase,
+    icon: FaDatabase as IconWithClassName,
     title: 'DevOps & Cloud',
     description: 'Setting up and maintaining cloud infrastructure and CI/CD pipelines.',
     technologies: ['AWS', 'Docker', 'Kubernetes', 'GitHub Actions']

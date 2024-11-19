@@ -102,17 +102,15 @@ const GlowingBranchingLines: React.FC<GlowingBranchingLinesProps> = ({ children 
       const height = canvas.height;
 
       pointsRef.current = pointsRef.current.map(point => {
-        let { x, y, vx, vy } = point;
-        x += vx;
-        y += vy;
+        const { x, y, vx, vy } = point;
+        const newX = x + vx;
+        const newY = y + vy;
 
         // Wrap points around if they go outside the canvas bounds
-        if (x < 0) x = width;
-        if (x > width) x = 0;
-        if (y < 0) y = height;
-        if (y > height) y = 0;
+        const wrappedX = newX < 0 ? width : (newX > width ? 0 : newX);
+        const wrappedY = newY < 0 ? height : (newY > height ? 0 : newY);
 
-        return { x, y, vx, vy };
+        return { x: wrappedX, y: wrappedY, vx, vy };
       });
     };
 

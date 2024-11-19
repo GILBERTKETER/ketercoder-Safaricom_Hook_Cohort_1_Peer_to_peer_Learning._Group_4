@@ -133,7 +133,7 @@ export default function PortfolioHeader() {
           Home
         </a>
         <a
-          href="#projects"
+          href="#services"
           className="text-lg text-cyan-500 hover:text-cyan-700 transition-all"
         >
           Services

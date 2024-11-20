@@ -99,6 +99,7 @@ To run this project locally:
    ```bash
    git clone https://github.com/gilbertketer/portfoliosite.git
    cd portfoliosite
+   ```
 
 
 ## 🌍 **Deployment**

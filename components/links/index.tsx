@@ -15,7 +15,7 @@ const SocialLinks: React.FC = () => {
       >
         <div className="flex lg:justify-center justify-center gap-6">
           <Link
-            href="https://github.com/yourusername"
+            href="https://github.com/gilbertketer"
             target="_blank"
             rel="noopener noreferrer"
             className="text-cyan-500 hover:text-cyan-400 transition duration-300"
@@ -23,7 +23,7 @@ const SocialLinks: React.FC = () => {
             <FaGithub size={40} />
           </Link>
           <Link
-            href="https://instagram.com/yourusername"
+            href="https://www.instagram.com/elitedev254/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-cyan-500 hover:text-cyan-400 transition duration-300"
@@ -31,7 +31,7 @@ const SocialLinks: React.FC = () => {
             <FaInstagram size={40} />
           </Link>
           <Link
-            href="https://twitter.com/yourusername"
+            href="https://x.com/keter_gilbert75"
             target="_blank"
             rel="noopener noreferrer"
             className="text-cyan-500 hover:text-cyan-400 transition duration-300"

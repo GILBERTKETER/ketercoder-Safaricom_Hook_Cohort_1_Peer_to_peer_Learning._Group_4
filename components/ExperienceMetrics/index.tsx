@@ -16,17 +16,17 @@ interface ExperienceMetric {
 const ExperienceMetrics: React.FC = () => {
   const metrics: ExperienceMetric[] = [
     {
-      value: 8,
+      value: 3,
       label: 'Years Experience',
       icon: FaClock as IconWithClassName
     },
     {
-      value: 12,
+      value: 6,
       label: 'Companies',
       icon: FaBuilding as IconWithClassName
     },
     {
-      value: 45,
+      value: 10,
       label: 'Projects',
       icon: FaCode as IconWithClassName
     }

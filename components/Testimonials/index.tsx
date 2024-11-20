@@ -19,32 +19,33 @@ interface Testimonial {
 const testimonials: Testimonial[] = [
     {
         id: 1,
-        name: "Sarah Johnson",
-        role: "Chief Executive Officer",
-        company: "TechStart Solutions",
-        content: "The level of expertise and attention to detail demonstrated by this team is truly exceptional. They didn't just meet our expectations – they redefined them.",
+        name: "Thokozani Tshabalala",
+        role: "UI/UX Designer",
+        company: "Medlink Project",
+        content: "Bayede.I salute you, you are exceptional Keter. I want to learn your skills, you are so cool in web dev.",
         rating: 5,
-        imageUrl: "/images/client1.avif"
+        imageUrl: "/images/client3.jpeg",
     },
     {
         id: 2,
-        name: "Michael Chen",
-        role: "Director of Innovation",
-        company: "Future Dynamics",
-        content: "Their innovative approach to problem-solving and commitment to excellence has made them an invaluable partner in our digital transformation journey.",
+        name: "Anotida Expected",
+        role: "AI/ML Expert",
+        company: "Freelance Project",
+        content: "If web development was football then Keter would be Messi, you are the GOAT in web development.",
         rating: 5,
-        imageUrl: "/images/client3.jpeg"
+        imageUrl: "/images/client2.avif",
     },
     {
         id: 3,
-        name: "Emma Davis",
-        role: "Product Strategy Lead",
-        company: "Innovate Hub",
-        content: "Working with this team has been transformative. Their technical prowess combined with strategic thinking has delivered exceptional results.",
+        name: "Faith Barare",
+        role: "Compliance Officer",
+        company: "TheBrcg",
+        content: "You are so quick in what you do, Keter. I love the speed and interaction with me.",
         rating: 5,
-        imageUrl: "/images/client2.avif"
+        imageUrl: "/images/client1.avif",
     }
 ];
+
 
 const TestimonialsCarousel = () => {
     const [currentSlide, setCurrentSlide] = useState(0);

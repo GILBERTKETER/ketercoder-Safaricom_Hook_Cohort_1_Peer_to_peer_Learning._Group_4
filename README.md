@@ -112,5 +112,5 @@ To get the project up and running on your local machine, follow these steps:
 
    ```
 ## **preview**
-![Preview Image](/images/preview.png)
+![Preview Image](https://engineerketer.dev/images/preview.png)
 

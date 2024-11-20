@@ -104,7 +104,7 @@ To get the project up and running on your local machine, follow these steps:
 
 To get the project up and running on your local machine, follow these steps:
 
-**Deployment**
+## **Deployment**
 
    ```bash
    visit https://engineerketer.dev to view the deployed version of this portfolio

@@ -26,7 +26,7 @@ const EducationAndInterests = () => {
     ];
 
     return (
-        <div className="w-full max-w-4xl mx-auto space-y-8 px-4 relative overflow-hidden">
+        <div className="w-full max-w-4xl mt-20 mx-auto space-y-8 px-4 relative overflow-hidden">
             {/* Education Section */}
             <motion.div
                 initial="visible"

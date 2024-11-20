@@ -9,11 +9,8 @@ Welcome to my Portfolio project! This project showcases my work, skills, and exp
 - [Design](#design)
 - [Technology Stack](#technology-stack)
 - [Installation](#installation)
-- [Usage](#usage)
-- [File Structure](#file-structure)
-- [Contributing](#contributing)
-- [License](#license)
 - [Deployment](#deployment)
+- [Preview](#preview)
 
 ---
 
@@ -102,4 +99,18 @@ To get the project up and running on your local machine, follow these steps:
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/your-username/portfolio.git
+   git clone https://github.com/gilbertketer/portfoliosite.git
+
+## Installation
+
+To get the project up and running on your local machine, follow these steps:
+
+## **Deployment**
+
+   ```bash
+   visit https://engineerketer.dev to view the deployed version of this portfolio
+
+   ```
+## **preview**
+![Preview Image](https://engineerketer.dev/images/preview.png)
+

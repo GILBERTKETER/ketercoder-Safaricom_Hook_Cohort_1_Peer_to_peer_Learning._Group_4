@@ -9,10 +9,6 @@ Welcome to my Portfolio project! This project showcases my work, skills, and exp
 - [Design](#design)
 - [Technology Stack](#technology-stack)
 - [Installation](#installation)
-- [Usage](#usage)
-- [File Structure](#file-structure)
-- [Contributing](#contributing)
-- [License](#license)
 - [Deployment](#deployment)
 
 ---

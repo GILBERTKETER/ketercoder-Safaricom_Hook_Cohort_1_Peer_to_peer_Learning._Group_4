@@ -102,4 +102,13 @@ To get the project up and running on your local machine, follow these steps:
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/your-username/portfolio.git
+   git clone https://github.com/gilbertketer/portfoliosite.git
+
+## Installation
+
+To get the project up and running on your local machine, follow these steps:
+
+**Deployment**
+
+   ```bash
+   visit https://engineerketer.dev to view the deployed version of this portfolio

@@ -97,7 +97,7 @@ To run this project locally:
 
 1️⃣ **Clone the Repository**:  
    ```bash
-   git clone https://github.com/gilbertketer/portfoliosite.git
+   git clone https://github.com/GILBERTKETER/ketercoder-Safaricom_Hook_Cohort_1_Peer_to_peer_Learning._Group_4.git
    cd portfoliosite
    ```
 

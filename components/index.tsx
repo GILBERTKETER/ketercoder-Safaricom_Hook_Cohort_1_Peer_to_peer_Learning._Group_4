@@ -6,6 +6,7 @@ import SocialLinks from "./links";
 import Contact from "./Contact";
 import Projects from "./Projects";
 import ScrollToTopButton from "./ScrollToTop/ScrollToTopButton";
+import EducationAndInterests from "./EducationAndInterest";
 import {
   ServicesSection,
   ExperienceSection,
@@ -14,4 +15,4 @@ import {
 } from './About';
 import TestimonialsCarousel from "./Testimonials";
 
-export { Hero, PortfolioHeader, Footer, GlowingMovingLines, SocialLinks, Contact, Projects, ServicesSection, ExperienceSection, CertificationsSection, SkillsSection, TestimonialsCarousel, ScrollToTopButton };
+export { Hero, PortfolioHeader, Footer, EducationAndInterests, GlowingMovingLines, SocialLinks, Contact, Projects, ServicesSection, ExperienceSection, CertificationsSection, SkillsSection, TestimonialsCarousel, ScrollToTopButton };

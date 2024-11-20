@@ -1,4 +1,4 @@
-import { Hero, PortfolioHeader, Footer, ScrollToTopButton, GlowingMovingLines, SocialLinks, Contact, Projects, ServicesSection, ExperienceSection, CertificationsSection, SkillsSection, TestimonialsCarousel } from "@/components/index"
+import { Hero, PortfolioHeader, Footer, ScrollToTopButton, GlowingMovingLines, SocialLinks, Contact, Projects, EducationAndInterests, ServicesSection, ExperienceSection, CertificationsSection, SkillsSection, TestimonialsCarousel } from "@/components/index"
 export default function Home() {
   return (
 
@@ -7,6 +7,7 @@ export default function Home() {
         <PortfolioHeader />
         <Hero />
         <SocialLinks />
+        <EducationAndInterests/>
         <ServicesSection />
         <SkillsSection />
         <ExperienceSection />

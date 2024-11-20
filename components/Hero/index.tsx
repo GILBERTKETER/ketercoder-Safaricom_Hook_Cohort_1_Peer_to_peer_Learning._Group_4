@@ -19,8 +19,8 @@ export default function Hero() {
           tailored to meet your unique goals. Let’s create something remarkable.
         </p>
         <div className="flex lg:justify-end justify-center items-center gap-6">
-          <a href="#projects" className="text-lg sm:text-xl font-semibold text-cyan-500 hover:underline">
-            View My Projects
+          <a href="https://wa.me/254759104865" className="text-lg sm:text-xl font-semibold text-cyan-500 hover:underline">
+            Chat on WhatsApp
           </a>
           <a href="#contact" className="text-lg sm:text-xl font-semibold text-cyan-500 hover:underline">
             Hire Me

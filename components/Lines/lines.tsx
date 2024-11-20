@@ -22,7 +22,7 @@ const GlowingBranchingLines: React.FC<GlowingBranchingLinesProps> = ({ children 
   // Update point count based on screen size
   const updatePointCount = () => {
     const isMobile = window.innerWidth <= 768;
-    setPointCount(isMobile ? 75 : 300);
+    setPointCount(isMobile ? 150 : 400);
   };
 
   useEffect(() => {

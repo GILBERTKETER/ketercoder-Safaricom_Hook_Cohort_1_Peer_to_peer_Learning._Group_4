@@ -32,7 +32,7 @@ export default function Hero() {
           <Image
             width={500}
             height={500}
-            src="/images/me.png"
+            src="/images/me2.png"
             alt="Gilbert Keter"
             className="object-cover w-full h-full"
           />

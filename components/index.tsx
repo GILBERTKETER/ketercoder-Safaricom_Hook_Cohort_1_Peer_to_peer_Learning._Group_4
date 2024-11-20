@@ -13,6 +13,7 @@ import {
   CertificationsSection,
   SkillsSection
 } from './About';
+import LoadingSpinner from "./LoadingSpinner/LoadingSpinner";
 import TestimonialsCarousel from "./Testimonials";
 
-export { Hero, PortfolioHeader, Footer, EducationAndInterests, GlowingMovingLines, SocialLinks, Contact, Projects, ServicesSection, ExperienceSection, CertificationsSection, SkillsSection, TestimonialsCarousel, ScrollToTopButton };
+export { Hero, PortfolioHeader, Footer, LoadingSpinner, EducationAndInterests, GlowingMovingLines, SocialLinks, Contact, Projects, ServicesSection, ExperienceSection, CertificationsSection, SkillsSection, TestimonialsCarousel, ScrollToTopButton };

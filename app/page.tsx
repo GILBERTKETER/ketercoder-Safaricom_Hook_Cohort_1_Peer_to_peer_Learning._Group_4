@@ -1,5 +1,15 @@
-import { Hero, PortfolioHeader, Footer, ScrollToTopButton, GlowingMovingLines, SocialLinks, Contact, Projects, EducationAndInterests, ServicesSection, ExperienceSection, CertificationsSection, SkillsSection, TestimonialsCarousel } from "@/components/index"
+"use client"
+import React, { useState, useEffect } from "react";
+import { Hero, LoadingSpinner, PortfolioHeader, Footer, ScrollToTopButton, GlowingMovingLines, SocialLinks, Contact, Projects, EducationAndInterests, ServicesSection, ExperienceSection, CertificationsSection, SkillsSection, TestimonialsCarousel } from "@/components/index"
 export default function Home() {
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 3000);
+    return () => clearTimeout(timer);
+  }, []);
+  if (loading) {
+    return <LoadingSpinner logoSrc="/images/logo.png" message="Preparing portfolio..." />;
+  }
   return (
 
     <div className="bg-black">
@@ -7,7 +17,7 @@ export default function Home() {
         <PortfolioHeader />
         <Hero />
         <SocialLinks />
-        <EducationAndInterests/>
+        <EducationAndInterests />
         <ServicesSection />
         <SkillsSection />
         <ExperienceSection />
@@ -16,7 +26,7 @@ export default function Home() {
         <TestimonialsCarousel />
         <Contact />
         <Footer />
-        <ScrollToTopButton/>
+        <ScrollToTopButton />
       </GlowingMovingLines>
 
     </div>

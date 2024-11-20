@@ -1,36 +1,105 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio Project - Hackathon
 
-## Getting Started
+Welcome to my Portfolio project! This project showcases my work, skills, and experience in web development and design, as well as highlights some key features and sections of my personal portfolio.
 
-First, run the development server:
+## Table of Contents
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- [Overview](#overview)
+- [Features](#features)
+- [Design](#design)
+- [Technology Stack](#technology-stack)
+- [Installation](#installation)
+- [Usage](#usage)
+- [File Structure](#file-structure)
+- [Contributing](#contributing)
+- [License](#license)
+- [Deployment](#deployment)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Overview
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This portfolio was created as part of a Hackathon project to showcase my skills in web development. It's a single-page application built using **Next.js**, a powerful React framework, and it includes sections that cover my projects, skills, education, certifications, and more. Each section is designed to be visually appealing, responsive, and user-friendly.
 
-## Learn More
+The design incorporates **smooth scrolling** and **animated elements**, making the user experience more dynamic. Additionally, it utilizes **GlowingMovingLines** for an interactive background, enhancing the overall aesthetics of the portfolio.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Features
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+This portfolio includes a variety of features to showcase my development and design skills:
 
-## Deploy on Vercel
+### 1. **Hero Section**
+   - An eye-catching introduction section that grabs the user’s attention with a catchy headline and description of who I am and what I do.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 2. **Portfolio Header**
+   - Includes a navigation bar with links to different sections of the portfolio, such as Education, Skills, Projects, etc. The header remains sticky while users scroll down.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 3. **Social Links**
+   - Quick links to my social media profiles, such as LinkedIn, GitHub, Twitter, etc., for easy access.
+
+### 4. **Education & Interests**
+   - A section that displays my educational background and interests, with visually appealing icons and timelines.
+
+### 5. **Services Section**
+   - This section outlines the services I offer as a developer, such as Web Development, UI/UX Design, Consultation, and more.
+
+### 6. **Skills Section**
+   - A detailed list of my skills, including programming languages, frameworks, and tools, displayed with modern, interactive skill bars.
+
+### 7. **Experience Section**
+   - A timeline or card-based layout showcasing my work experience, including job roles, company names, and key achievements.
+
+### 8. **Projects**
+   - A gallery or card-based section showcasing projects I have worked on, with brief descriptions, technologies used, and links to the live projects or GitHub repositories.
+
+### 9. **Certifications Section**
+   - A list of certifications I’ve earned, such as courses, boot camps, or official certifications, with links to verify the credentials.
+
+### 10. **Testimonials Carousel**
+   - A dynamic carousel displaying testimonials from colleagues, mentors, or clients, adding credibility and trust to my work.
+
+### 11. **Contact Form**
+   - A form that allows users to contact me directly via email for inquiries, collaborations, or other opportunities.
+
+### 12. **Footer**
+   - Includes copyright information, additional social links, and other essential information.
+
+### 13. **Scroll To Top Button**
+   - A button that appears when the user scrolls down the page, allowing them to quickly return to the top of the portfolio.
+
+---
+
+## Design
+
+The design of this portfolio is a modern, minimalist layout that prioritizes content readability and user experience. Some notable design aspects include:
+
+- **Dark Mode Background**: The primary background color is black, with various components and sections using contrasting colors to enhance readability.
+- **Animated Lines**: The background includes animated glowing moving lines that add an interactive effect to the page, making it more engaging.
+- **Responsive Layout**: The layout is fully responsive, ensuring that the portfolio looks great on all screen sizes, from desktops to mobile devices.
+- **Smooth Scrolling**: The page includes smooth scroll effects that enhance navigation and make it feel more polished and professional.
+
+---
+
+## Technology Stack
+
+This project utilizes a variety of modern web development tools and frameworks to ensure a smooth, efficient, and responsive user experience.
+
+- **Next.js**: A React-based framework that provides server-side rendering (SSR) for improved performance and SEO.
+- **React**: A JavaScript library for building interactive user interfaces.
+- **CSS & SCSS**: For custom styles, SCSS is used for modular styling and better maintainability.
+- **React-Spring**: A spring-physics-based animation library used to animate components smoothly.
+- **Tailwind CSS**: A utility-first CSS framework for creating custom, responsive designs quickly.
+- **GlowingMovingLines**: A custom component designed for creating dynamic background effects with moving glowing lines.
+- **React Slick Carousel**: A carousel component used for the testimonials section.
+
+---
+
+## Installation
+
+To get the project up and running on your local machine, follow these steps:
+
+1. **Clone the repository**
+
+   ```bash
+   git clone https://github.com/your-username/portfolio.git

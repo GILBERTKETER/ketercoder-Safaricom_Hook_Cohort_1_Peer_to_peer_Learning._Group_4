@@ -10,6 +10,7 @@ Welcome to my Portfolio project! This project showcases my work, skills, and exp
 - [Technology Stack](#technology-stack)
 - [Installation](#installation)
 - [Deployment](#deployment)
+- [Preview](#preview)
 
 ---
 
@@ -111,5 +112,5 @@ To get the project up and running on your local machine, follow these steps:
 
    ```
 ## **preview**
-![Preview Image](https://engineerketer.dev/images/preview.png)
+![Preview Image](/images/preview.png)
 

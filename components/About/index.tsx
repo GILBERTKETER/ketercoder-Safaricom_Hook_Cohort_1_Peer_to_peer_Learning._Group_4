@@ -1,5 +1,5 @@
 "use client"
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import ExperienceMetrics from '../ExperienceMetrics';
 import GradientSection from '../Gradient';
@@ -424,8 +424,18 @@ export const ServicesSection: React.FC = () => {
 };
 
 export const ExperienceSection: React.FC = () => {
+  const [visibleCount, setVisibleCount] = useState(3);
+
+  const handleShowMore = () => {
+    setVisibleCount((prevCount) => prevCount + 3);
+  };
+
+  const handleShowLess = () => {
+    setVisibleCount((prevCount) => Math.max(3, prevCount - 3));
+  };
+
   return (
-    <section id="experiences" className=" px-4 max-w-7xl mx-auto">
+    <section id="experiences" className="px-4 max-w-7xl mx-auto">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -434,20 +444,40 @@ export const ExperienceSection: React.FC = () => {
       >
         <h2 className="text-4xl font-bold text-white mb-4">Experience</h2>
         <div className="w-20 h-1 bg-cyan-500 mx-auto rounded-full" />
-
         <p className="text-gray-300 max-w-2xl mx-auto">
           A track record of delivering impactful solutions at industry-leading companies.
         </p>
       </motion.div>
-      <div className="max-w-4xl mx-auto ">
-        {experiences.map((experience, index) => (
+      <div className="max-w-4xl mx-auto">
+        {experiences.slice(0, visibleCount).map((experience, index) => (
           <ExperienceCard key={index} experience={experience} />
         ))}
+      </div>
+      <div className="text-center mt-8 flex gap-4 justify-center">
+        {visibleCount < experiences.length && (
+          <button
+            onClick={handleShowMore}
+            className="relative text-cyan-500 px-4 py-2 rounded-md bg-transparent font-medium focus:outline-none"
+          >
+            Show More
+            <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 animate-glow"></span>
+          </button>
+        )}
+        {visibleCount > 3 && (
+          <button
+            onClick={handleShowLess}
+            className="relative text-cyan-500 px-4 py-2 rounded-md bg-transparent font-medium focus:outline-none"
+          >
+            Show Less
+            <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 animate-glow"></span>
+          </button>
+        )}
       </div>
       <ExperienceMetrics />
     </section>
   );
 };
+
 
 export const CertificationsSection: React.FC = () => {
   return (

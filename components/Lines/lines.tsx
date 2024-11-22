@@ -27,7 +27,7 @@ const GlowingBranchingLines: React.FC<GlowingBranchingLinesProps> = ({ children 
   const pointsRef = useRef<Point[]>([]);
   const starsRef = useRef<Star[]>([]);
   const containerRef = useRef<HTMLDivElement>(null);
-  const [pointCount, setPointCount] = useState<number>(300);
+  const [pointCount] = useState<number>(300);
   const LINE_LENGTH = 150;
   const STAR_COUNT = 100; // Increased number of stars
 
